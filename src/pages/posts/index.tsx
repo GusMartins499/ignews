@@ -1,9 +1,15 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
+<<<<<<< HEAD
 import Link from "next/link";
 
 import Prismic from "@prismicio/client";
 import { RichText } from "prismic-dom";
+=======
+import Prismic from "@prismicio/client";
+import { RichText } from "prismic-dom";
+
+>>>>>>> 3be18b8a1250e36d4516632a56ec9bf65e633db8
 import { getPrismicClient } from "../../services/prismic";
 
 import styles from "./styles.module.scss";
@@ -28,6 +34,7 @@ export default function Posts({ posts }: IProps) {
       <main className={styles.container}>
         <div className={styles.posts}>
           {posts.map((post) => (
+<<<<<<< HEAD
             <Link href={`/posts/${post.slug}`}>
               <a key={post.slug}>
                 <time>{post.updatedAt}</time>
@@ -35,6 +42,13 @@ export default function Posts({ posts }: IProps) {
                 <p>{post.excerpt}</p>
               </a>
             </Link>
+=======
+            <a key={post.slug} href="#">
+              <time>{post.updatedAt}</time>
+              <strong>{post.title}</strong>
+              <p>{post.excerpt}</p>
+            </a>
+>>>>>>> 3be18b8a1250e36d4516632a56ec9bf65e633db8
           ))}
         </div>
       </main>
